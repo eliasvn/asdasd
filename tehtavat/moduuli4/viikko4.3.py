@@ -1,21 +1,22 @@
-pienin = None
-suurin = None
-while True:
-    try:
-        luku = input("Anna lukuja: ")
+syote = input("Anna luku (tyhjä lopettaa): ")
 
-        if luku == "":
+if syote != "":
+    luku = float(syote)
+    pienin = luku
+    suurin = luku
+
+    while True:
+        syote = input("Anna luku (tyhjä lopettaa): ")
+
+        if syote == "":
             break
-        luku = int(luku)
-        if pienin == None or pienin > luku:
+
+        luku = float(syote)
+
+        if luku < pienin:
             pienin = luku
-        if suurin == None or suurin < luku:
+        if luku > suurin:
             suurin = luku
-    except:
-        print("Syöte ei kelpaa")
-print(f"Pienin luku oli: {pienin}")
-print(f"Suurin luku oli: {suurin}")
 
-
-
-
+    print(f"Pienin: {pienin}")
+    print(f"Suurin: {suurin}")
