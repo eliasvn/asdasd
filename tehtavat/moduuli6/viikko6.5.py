@@ -1,12 +1,16 @@
 def karsinta(lista):
-    parilliset=[]
+    parilliset = []
     for luku in lista:
         if luku % 2 == 0:
             parilliset.append(luku)
     return parilliset
 
+numerot=[]
+
 while True:
-    syote=int(input("syötä luku, tyhjä lopettaa: "))
+    syote = input("Syötä luku: ")
     if syote == "":
         break
-print(karsinta(syote))
+    numerot.append(int(syote))
+print(f"Raaka lista: {numerot}")
+print(f"Karsittu lista (vain parilliset): {karsinta(numerot)}")
